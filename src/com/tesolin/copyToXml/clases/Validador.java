@@ -33,7 +33,24 @@ public class Validador {
         if (fila.length() <= 0)
             return false;
 
+        if (!fila.endsWith("."))
+            return false;
+
+        if (!fila.toUpperCase().contains("PIC "))
+            return false;
+
+        return true;
+
+
+    /*
+
+        if (fila.length() <= 0)
+            return false;
+
         return fila.toUpperCase().contains(" PIC ");
+
+     */
+
     }
 
     public static boolean valida_comentario(String fila) {
@@ -41,7 +58,17 @@ public class Validador {
         if (fila.length() <= 0)
             return false;
 
+        if (!fila.startsWith("*"))
+            return false;
+
+        return true;
+
+        /*
+        if (fila.length() <= 0)
+            return false;
+
         return fila.charAt(0) == '*';
+         */
 
     }
 
