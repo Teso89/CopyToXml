@@ -79,3 +79,10 @@
 2021-12-27 17.04.16.00016  >>>  Escribiendo las etiquetas <responseHeader> ... </responseHeader>
 2021-12-27 17.04.16.00016  >>>  Escribiendo las etiquetas <responseBody> ... </responseBody>
 2021-12-27 17.04.16.00016  >>>  HS27.xml --- OK ---
+2021-12-27 17.08.29.00029  >>>  Buscando archivos en la ruta: 'C:\Users\Daniel'
+2021-12-27 17.08.30.00030  >>>  Leyendo el archivo: 'PCVHS27.txt'
+2021-12-27 17.08.30.00030  >>>  Preparándose para escribir el archivo 'HS27.xml'
+2021-12-27 17.08.30.00030  >>>  Escribiendo las etiquetas <request> ... </request>
+2021-12-27 17.08.30.00030  >>>  Escribiendo las etiquetas <responseHeader> ... </responseHeader>
+2021-12-27 17.08.30.00030  >>>  Escribiendo las etiquetas <responseBody> ... </responseBody>
+2021-12-27 17.08.30.00030  >>>  HS27.xml --- OK ---
