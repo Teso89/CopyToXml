@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CopyToXML:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CopyToXML_jar</output-path>
+    <root id="archive" name="CopyToXML.jar">
+      <element id="module-output" name="CopyToXML" />
+    </root>
+  </artifact>
+</component>
