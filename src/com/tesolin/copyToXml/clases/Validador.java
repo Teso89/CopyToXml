@@ -20,12 +20,6 @@ public class Validador {
 
         return true;
 
-        /*
-        if (fila.length() <= 0)
-            return false;
-
-        return fila.startsWith("01");
-         */
     }
 
     public static boolean valida_pic(String fila) {
@@ -63,13 +57,6 @@ public class Validador {
 
         return true;
 
-        /*
-        if (fila.length() <= 0)
-            return false;
-
-        return fila.charAt(0) == '*';
-         */
-
     }
 
     public static boolean valida_varGrupo(String fila) {
@@ -87,14 +74,6 @@ public class Validador {
             return false;
 
         return true;
-
-        /*
-        if (valida_01(fila))
-            return false;
-        else
-            return !valida_pic(fila);
-
-         */
 
     }
 
@@ -140,17 +119,6 @@ public class Validador {
             return false;
 
         return true;
-
-        /*
-        if (fila.toUpperCase().contains("PIC "))
-            return false;
-        */
-
-        /*
-        if (!fila.startsWith("01"))
-            return false;
-         */
-
 
     }
 
