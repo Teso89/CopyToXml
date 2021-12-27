@@ -16,8 +16,8 @@ public class Main {
         if (args0.length > 0) {
 
             switch (args0[0]) {
-                case "--help": muestraAyuda();
-                case "--file": buscaArchivos(args0[1]);
+                case "--help" : muestraAyuda();
+                case "--file" : buscaArchivos(args0[1]);
                 default: break;
             }
 

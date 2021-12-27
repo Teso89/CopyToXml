@@ -93,6 +93,7 @@ public class Utils {
 
     }
 
+    // Rompe cuando el PIC esta en otra linea.
     public static String obtieneNombreVariable(String texto, String prefijo) {
 
         int pos1 = texto.indexOf(prefijo);
@@ -101,6 +102,9 @@ public class Utils {
             pos1 = texto.indexOf("FILLER");
 
         int pos2 = texto.indexOf(' ', pos1);
+
+        if (pos2 == -1)
+            pos2 = texto.length();
 
         String nombreVariable = texto.substring(pos1, pos2);
 
