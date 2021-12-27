@@ -12,7 +12,20 @@ public class Validador {
         if (fila.length() <= 0)
             return false;
 
+        if (!fila.endsWith("."))
+            return false;
+
+        if (!fila.startsWith("01"))
+            return false;
+
+        return true;
+
+        /*
+        if (fila.length() <= 0)
+            return false;
+
         return fila.startsWith("01");
+         */
     }
 
     public static boolean valida_pic(String fila) {
