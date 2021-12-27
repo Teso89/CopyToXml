@@ -131,4 +131,27 @@ public class Validador {
 
     }
 
+    public static boolean valida_variableCortada(String fila) {
+
+        if (fila.length() <= 0)
+            return false;
+
+        if (fila.endsWith("."))
+            return false;
+
+        return true;
+
+        /*
+        if (fila.toUpperCase().contains("PIC "))
+            return false;
+        */
+
+        /*
+        if (!fila.startsWith("01"))
+            return false;
+         */
+
+
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.tesolin.copyToXml.clases;
 
+import javax.rmi.CORBA.Util;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Properties;
@@ -12,6 +13,7 @@ public class Procesador {
     private int tag;
     private int posicion;
     private static final Integer POSICION_INICIAL = 32;
+    private String aux_nombre;
 
     public Procesador() {
         this.request        = new ArrayList<>();
@@ -19,6 +21,7 @@ public class Procesador {
         this.tx             = "UNDEFINED_TX";
         this.tag            = 0;
         this.posicion       = POSICION_INICIAL;
+        this.aux_nombre     = null;
     }
 
     public void analizaArchivo(String archivo) {
@@ -71,11 +74,14 @@ public class Procesador {
                 // Obtiene TDD, Nombre, Posición, Longitud y Decimales.
                 String[] campo = new String[] {
                         Utils.obtieneTipoDato(linea),
-                        Utils.obtieneNombreVariable(linea, this.tx),
+                        //Utils.obtieneNombreVariable(linea, this.tx),
+                        (this.aux_nombre == null) ? Utils.obtieneNombreVariable(linea, this.tx) : this.aux_nombre,
                         this.posicion + "",
                         Utils.obtieneLongitudInteger(linea).toString(),
                         Utils.obtieneDecimales(linea)
                 };
+
+                this.aux_nombre = null;
 
                 if (this.tag == 1) {
 
@@ -88,6 +94,8 @@ public class Procesador {
                 }
 
 
+            } else if (Validador.valida_variableCortada(linea)) {
+                this.aux_nombre = Utils.obtieneNombreVariable(linea, this.tx);
             }
 
         }

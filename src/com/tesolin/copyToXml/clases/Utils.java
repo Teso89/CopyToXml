@@ -103,6 +103,9 @@ public class Utils {
 
         int pos2 = texto.indexOf(' ', pos1);
 
+        if (pos2 == -1)
+            pos2 = texto.length();
+
         String nombreVariable = texto.substring(pos1, pos2);
 
         return nombreVariable;
