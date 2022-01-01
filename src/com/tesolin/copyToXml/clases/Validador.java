@@ -35,16 +35,6 @@ public class Validador {
 
         return true;
 
-
-    /*
-
-        if (fila.length() <= 0)
-            return false;
-
-        return fila.toUpperCase().contains(" PIC ");
-
-     */
-
     }
 
     public static boolean valida_comentario(String fila) {
