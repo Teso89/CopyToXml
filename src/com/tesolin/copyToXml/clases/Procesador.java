@@ -1,9 +1,7 @@
 package com.tesolin.copyToXml.clases;
 
-import javax.rmi.CORBA.Util;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Properties;
 
 public class Procesador {
 
