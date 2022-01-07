@@ -5,24 +5,28 @@ import com.tesolin.copyToXml.clases.Procesador;
 import com.tesolin.copyToXml.clases.Utils;
 import com.tesolin.copyToXml.clases.Validador;
 import java.io.*;
-import java.util.Properties;
 
 public class Main {
+
+    // Atributos de la clase.
+    private static boolean muestraAyuda;
+    private static String entrada;
+    private static String salida;
 
     // Método principal.
     public static void main (String[] args0) {
 
+        muestraAyuda = false;
+        entrada      = System.getProperty("user.home");
+        salida       = "";
 
-        if (args0.length > 0) {
+        // Se analizan y cargan los parámetros ingresados.
+        recorreParametros(args0);
 
-            switch (args0[0]) {
-                case "--help" : muestraAyuda();
-                case "--file" : buscaArchivos(args0[1]);
-                default: break;
-            }
-
+        if (muestraAyuda == true) {
+            muestraAyuda();
         } else {
-            buscaArchivos(System.getProperty("user.home"));
+            buscaArchivos();
         }
 
     }
@@ -49,12 +53,12 @@ public class Main {
     }
 
     // Método para buscar todos los archivos en el directorio.
-    public static void buscaArchivos(String ruta) {
+    public static void buscaArchivos() {
 
-        Logger.logProperty("msg.evento.leyendo.directorio.r", ruta);
+        Logger.logProperty("msg.evento.leyendo.directorio.r", entrada);
 
         int aux                = 0;
-        File directorio        = new File(ruta);
+        File directorio        = new File(entrada);
         File[] listadoArchivos = directorio.listFiles();
 
         if (listadoArchivos == null) {
@@ -70,7 +74,7 @@ public class Main {
 
                 aux++;
 
-                Procesador procesador = new Procesador();
+                Procesador procesador = new Procesador(salida);
                 procesador.analizaArchivo(listadoArchivos[i].getAbsolutePath());
                 procesador.generaXML();
 
@@ -80,6 +84,46 @@ public class Main {
 
         if (aux <= 0)
             Logger.logProperty("msg.error.directorio.sinTXT", null);
+
+    }
+
+    // Método para recorrer el array de parámetros.
+    private static void recorreParametros(String[] array) {
+
+        if (array.length > 0) {
+
+            for (int i = 0; i < array.length; i++) {
+
+                switch (array[i]) {
+                    case "--help" :
+                        muestraAyuda = true;
+                        break;
+                    case "--in"   :
+                        entrada      = evaluaValores(array,i+1);
+                        break;
+                    case "--out"  :
+                        salida       = evaluaValores(array,i+1);
+                        break;
+                    default       :
+                        break;
+                }
+
+            }
+
+        }
+
+    }
+
+    // Método para evaluar los valores de cada parámetro.
+    private static String evaluaValores(String[] array, int i) {
+
+        if (i >= array.length)
+            return null;
+
+        if (array[i].contains("--"))
+            return null;
+        else
+            return array[i];
 
     }
 
