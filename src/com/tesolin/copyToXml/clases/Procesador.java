@@ -12,14 +12,16 @@ public class Procesador {
     private int posicion;
     private static final Integer POSICION_INICIAL = 32;
     private String aux_nombre;
+    private String salida;
 
-    public Procesador() {
+    public Procesador(String salida) {
         this.request        = new ArrayList<>();
         this.responseBody   = new ArrayList<>();
         this.tx             = "UNDEFINED_TX";
         this.tag            = 0;
         this.posicion       = POSICION_INICIAL;
         this.aux_nombre     = null;
+        this.salida         = salida;
     }
 
     public void analizaArchivo(String archivo) {
@@ -122,7 +124,7 @@ public class Procesador {
 
             File file = new File(nombreXML);
 
-            FileWriter writer = new FileWriter(file);
+            FileWriter writer = new FileWriter(this.salida + file);
 
             BufferedWriter bufferedWriter = new BufferedWriter(writer);
 
