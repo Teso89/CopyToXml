@@ -1,3 +1,5 @@
-del *.xml
-del CopyToXML.log
-rmdir out /S /Q
+#! /bin/sh
+
+rm *.xml
+rm *.log
+rm out -R
