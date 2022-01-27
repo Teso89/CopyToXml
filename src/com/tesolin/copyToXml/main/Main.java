@@ -34,6 +34,7 @@ public class Main {
     // Método para mostrar la explicación del programa.
     public static void muestraAyuda() {
 
+        /*
         String chamullo = "\n" +
                         "Instrucciones." + "\n" +
                         "--------------" + "\n" +
@@ -47,9 +48,29 @@ public class Main {
                         "            * 15 HS27-TAR-CLA              PIC  X(19).  " + "\n" +
                         "3) Correr el .JAR y esperar a obtener los .XML" + "\n"
                 ;
+        */
+
+        String chamullo =
+                "Intrucciones:\n" +
+                "\n" +
+                "    1)  Poner uno o mas copys en el directorio del usuario, ej. \"C\\\\Users\\\\Daniel\" o \"/home/daniel\".\n" +
+                "    2)  A cada copy agregarle las marcas {{ENTRADA}} y {{SALIDA}} al principio de las variables de grupo para indicar la REQUEST y BODYRESPONSE.\n" +
+                "        Si se quiere excluir una o mas lineas del procesamiento, se debe agregar un asterisco al principio de la fila.\n" +
+                "    3)  Correr el servicio para generar los XML, por defecto se guardan en el mismo directio del .JAR.\n" +
+                "\n" +
+                "Opciones:\n" +
+                "\n" +
+                "    --help          Muestra esta ayuda.\n" +
+                "    --in            Permite cambiar el directorio de entrada.\n" +
+                "    --out           Permite cambiar el directorio de salida.\n" +
+                "\n" +
+                "Ejemplo:\n" +
+                "\n" +
+                "    {{ENTRADA}}  05 HS27-DATOS-ENTRADA.\"\n" +
+                "    {{SALIDA}}  05 HS27-RESPUESTA.\"\n" +
+                "    * 15 HS27-TAR-CLA              PIC  X(19).\"\n\n";
 
         System.out.println(chamullo);
-
     }
 
     // Método para buscar todos los archivos en el directorio.

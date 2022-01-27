@@ -7,9 +7,17 @@ Mini aplicación Java para la exportación de archivos de XML de transacciones p
 ## Instrucciones.
 
 1) Copiar el ejecutable CopyToXml.jar en cualquier directorio.
-2) Guardar uno o mas archivos TXT con el copy Cobol en el directorio del Usuario.
+2) Guardar uno o mas archivos TXT con el copy Cobol en el directorio del Usuario, por ejemplo "C:\Users\Daniel" o "/home/daniel".
 3) Poner a cada TXT una marca para indicar cuales son los campos de entrada y de salida (ver mas adelante).
 4) Ejecutar el JAR y esperar que se exporten los XML, estos archivos se generan en el mismo directorio del JAR junto con el Log.
+
+<br/> <hr/> <br/>
+
+## Opciones.
+
+    --help          Muestra la ayuda.
+    --in            Permite cambiar el directorio de entrada, ej. "--in /home/in/".
+    --out           Permite cambiar el directorio de salida, ej. "--out /home/out/".
 
 <br/> <hr/> <br/>
 
