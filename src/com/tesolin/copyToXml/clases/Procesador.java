@@ -23,7 +23,14 @@ public class Procesador {
         this.posicion       = POSICION_INICIAL;
         this.aux_nombre     = null;
         this.salida         = salida;
-        this.ingresaNombre  = false;
+
+        System.out.print("¿Cambiar los nombres a cada variable? (S / N):  ");
+        String op = Utils.ingresoTeclado();
+
+        if (op.trim().toLowerCase().equals("s"))
+            this.ingresaNombre  = true;
+        else
+            this.ingresaNombre  = false;
     }
 
     public void analizaArchivo(String archivo) {
@@ -72,7 +79,9 @@ public class Procesador {
             // Valida si la liena es una definición de variable.
             if (Validador.valida_pic(linea)) {
 
-                String[] campo;
+                String[] campo = null;
+
+                if (this.tag == 1 || this.tag ==2) {
 
                 if (this.ingresaNombre == true) {
 
@@ -106,6 +115,8 @@ public class Procesador {
 
                 }
 
+                }
+
                 // Obtiene TDD, Nombre, Posición, Longitud y Decimales.
                 /*
                 String[] campo = new String[] {
@@ -128,8 +139,6 @@ public class Procesador {
 
                 } else if (this.tag == 2) {
                     responseBody.add(campo);
-                } else if (this.tag == 4) {
-                    this.ingresaNombre = true;
                 }
 
 
