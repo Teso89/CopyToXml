@@ -2,10 +2,11 @@ package com.tesolin.copyToXml.clases;
 
 public class Validador {
 
-    private static final String MARCA_ENTRADA = "{{ENTRADA}}";
-    private static final String MARCA_SALIDA  = "{{SALIDA}}";
-    private static final String MARCA_HEADER  = "{{HEADER}}";
-    private static final String MARCA_RESET   = "{{RESET}}";
+    private static final String MARCA_ENTRADA  = "{{ENTRADA}}";
+    private static final String MARCA_SALIDA   = "{{SALIDA}}";
+    private static final String MARCA_HEADER   = "{{HEADER}}";
+    private static final String MARCA_RESET    = "{{RESET}}";
+    private static final String MARCA_RENOMBRE = "{{RENOMBRE}}";
 
     public static boolean valida_01(String fila) {
 
@@ -82,6 +83,9 @@ public class Validador {
 
         if (fila.contains(MARCA_HEADER))
             resultado = 3;
+
+        if (fila.contains(MARCA_RENOMBRE))
+            resultado = 4;
 
         return resultado;
 

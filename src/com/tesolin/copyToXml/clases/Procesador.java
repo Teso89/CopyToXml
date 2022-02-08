@@ -128,6 +128,8 @@ public class Procesador {
 
                 } else if (this.tag == 2) {
                     responseBody.add(campo);
+                } else if (this.tag == 4) {
+                    this.ingresaNombre = true;
                 }
 
 
@@ -233,7 +235,8 @@ public class Procesador {
 
     private String mostrarTexto(String nombreActual) {
 
-        System.out.print("Nuevo nombre para '" + nombreActual + "':");
+        System.out.print("   *** Nombre nuevo para la variable: '" + nombreActual + "' : ");
+
         String ingresado = Utils.ingresoTeclado();
 
         if (ingresado.equals("") || ingresado == null)
