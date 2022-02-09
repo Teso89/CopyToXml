@@ -12,8 +12,8 @@ public class Procesador {
     private int posicion;
     private static final Integer POSICION_INICIAL = 32;
     private String aux_nombre;
-    private String salida;
-    private boolean ingresaNombre;
+    private final String salida;
+    private final boolean ingresaNombre;
 
     public Procesador(String salida) {
         this.request        = new ArrayList<>();
@@ -24,13 +24,10 @@ public class Procesador {
         this.aux_nombre     = null;
         this.salida         = salida;
 
-        System.out.print("¿Cambiar los nombres a cada variable? (S / N):  ");
+        System.out.print(Utils.consultaPropiedades("msg.eleccion.nombre"));
         String op = Utils.ingresoTeclado();
 
-        if (op.trim().toLowerCase().equals("s"))
-            this.ingresaNombre  = true;
-        else
-            this.ingresaNombre  = false;
+        this.ingresaNombre  = op.trim().equalsIgnoreCase("s");
     }
 
     public void analizaArchivo(String archivo) {
@@ -234,7 +231,7 @@ public class Procesador {
 
     private String mostrarTexto(String nombreActual) {
 
-        System.out.print("   *** Nombre nuevo para la variable: '" + nombreActual + "' : ");
+        System.out.print(Utils.consultaPropiedades("msg.eleccion.nombre.ingreso").replace("{{NOMBRE}}", nombreActual));
 
         String ingresado = Utils.ingresoTeclado();
 

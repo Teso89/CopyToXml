@@ -15,10 +15,7 @@ public class Validador {
         if (!fila.endsWith("."))
             return false;
 
-        if (!fila.startsWith("01"))
-            return false;
-
-        return true;
+        return fila.startsWith("01");
 
     }
 
@@ -30,10 +27,7 @@ public class Validador {
         if (!fila.endsWith("."))
             return false;
 
-        if (!fila.toUpperCase().contains("PIC "))
-            return false;
-
-        return true;
+        return fila.toUpperCase().contains("PIC ");
 
     }
 
@@ -42,10 +36,7 @@ public class Validador {
         if (fila.length() <= 0)
             return false;
 
-        if (!fila.startsWith("*"))
-            return false;
-
-        return true;
+        return fila.startsWith("*");
 
     }
 
@@ -60,10 +51,7 @@ public class Validador {
         if (fila.toUpperCase().contains("PIC "))
             return false;
 
-        if (!fila.endsWith("."))
-            return false;
-
-        return true;
+        return fila.endsWith(".");
 
     }
 
@@ -105,10 +93,7 @@ public class Validador {
         if (fila.length() <= 0)
             return false;
 
-        if (fila.endsWith("."))
-            return false;
-
-        return true;
+        return !fila.endsWith(".");
 
     }
 

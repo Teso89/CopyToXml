@@ -1,0 +1,11 @@
+2022-02-09 17.37.42.00042  >>>  Buscando archivos en la ruta: '/home/daniel'
+2022-02-09 17.37.42.00042  >>>  Leyendo el archivo: 'PCVHS27.txt'
+2022-02-09 17.39.24.00024  >>>  Buscando archivos en la ruta: '/home/daniel'
+2022-02-09 17.39.24.00024  >>>  Leyendo el archivo: 'PCVHS27.txt'
+2022-02-09 17.39.36.00036  >>>  Preparándose para escribir el archivo 'S27X.xml'
+2022-02-09 17.39.36.00036  >>>  Escribiendo las etiquetas <request> ... </request>
+2022-02-09 17.39.36.00036  >>>  Escribiendo las etiquetas <responseHeader> ... </responseHeader>
+2022-02-09 17.39.36.00036  >>>  Escribiendo las etiquetas <responseBody> ... </responseBody>
+2022-02-09 17.39.36.00036  >>>  S27X.xml --- OK ---
+2022-02-09 17.44.31.00031  >>>  Buscando archivos en la ruta: '/home/daniel'
+2022-02-09 17.44.31.00031  >>>  Leyendo el archivo: 'PCVHS27.txt'
