@@ -1,0 +1,81 @@
+      *****************************************
+      *                                       *
+      * COPY DE PRUEBAS USADO PARA CopyToXML. *
+      *                                       *
+      *****************************************
+
+
+       01  ARCTX02.                                                  
+           05 TX02-MAS-REGIS            PIC  9(02).                  
+           05 TX02-MENSA-ERROR.                                      
+              10 TX02-ERR-TIPO          PIC  X(01).                  
+                88 TX02-TIPO-OK             VALUE '0'.               
+                88 TX02-TIPO-UTIL           VALUE '1'.               
+                88 TX02-TIPO-PGM            VALUE '2'.               
+              10 TX02-ERR-ACCION        PIC  X(01).                  
+                88 TX02-ACCION-OK           VALUE '0'.               
+                88 TX02-ACCION-DEFINIT      VALUE '1'.               
+                88 TX02-ACCION-TEMPOR       VALUE '2'.               
+              10 TX02-ERROR.                                         
+                 15 TX02-CODIGO-ERROR   PIC  X(03).                  
+      *          SI '999' VER TX02-COD-ERROR   Y TX02-DES-ERROR      
+                 15 TX02-EXPLIC-ERROR   PIC  X(20).                  
+              10 TX02-MODULO-GEN-ERROR  PIC  X(08).                  
+           05 TX02-MILISEGUNDOS         PIC s9(07) VALUE ZERO.       
+           05 TX02-CAN-REGIS            PIC  9(02) VALUE ZERO.       
+           05 TX02-NRO-TAREA            PIC  9(07) VALUE ZERO COMP-3.
+           05 FILLER                    PIC  X(02) VALUE SPACES.   
+{{ENTRADA}}05 TX02-DATOS-ENTRADA.                                  
+              10 TX02-CLAVE.                                       
+                 15 TX02-ADM-CLA              PIC  X(03).          
+                 15 TX02-SAD-CLA              PIC  X(03).          
+                 15 TX02-BCO-CLA              PIC  X(03).          
+                 15 TX02-CASA-CLA             PIC  X(03).          
+                 15 TX02-USU-CLA              PIC  X(10).          
+                 15 TX02-TAR-CLA              PIC  X(19).          
+                 15 TX02-FEC-ORIG-CLA         PIC  X(08).          
+                 15 TX02-CUT-CLA              PIC  X(12).          
+              10 TX02-COMANDO        PIC  X(01).                   
+                 88 TX02-ALTA            VALUE 'A'.                
+                 88 TX02-BAJA            VALUE 'X'.                
+                 88 TX02-SIMULACION      VALUE 'S'.                
+              10 TX02-GENERA-CANANT     PIC  X.                    
+                88 TX02-SI-GENERA-CANANT    VALUE 'S'.             
+                88 TX02-NO-GENERA-CANANT    VALUE 'N'.             
+              10 FILLER                 PIC  X(05).                
+{{SALIDA}} 05 TX02-RESPUESTA.                                  
+              10 TX02-COD-ERROR.                               
+                 15 TX02-COD-MODULO     PIC  X(02).            
+                 15 TX02-COD-RETORNO    PIC  X(04).            
+              10 TX02-DES-ERROR         PIC  X(78).            
+              10 TX02-DATOS.                                   
+                 15 TX02-ACCION              PIC X(1).         
+                 15 TX02-BANCO               PIC X(3).         
+                 15 TX02-DBANCOO             PIC X(03).        
+                 15 TX02-DDBANCOO            PIC X(20).        
+                 15 TX02-DCUENTAO            PIC X(10).        
+                 15 TX02-DDCUENTO            PIC X(26).        
+                 15 TX02-CUT-SELECCIONADO    PIC X(12).        
+                 15 TX02-RMJ-FUNC            PIC X(08).        
+                 15 TX02-MONEDA-A-LIQUIDAR   PIC X(3).         
+                 15 TX02-IMPORTE-INTERES     PIC -9(15)V99.    
+                 15 TX02-INTERES-AL-DIA      PIC -9(15)V99.    
+                 15 TX02-IMP-TOT-PLAN-MONEDA-LIQ               
+                                             PIC -9(15)V99.    
+                 15 TX02-INTERES             PIC -9(15)V99.     
+                 15 TX02-IMP-CAPITAL-TOT-PLAN PIC -9(15)V99.    
+                 15 TX02-CF-TOTAL-PLAN       PIC -9(15)V99.     
+                 15 TX02-CAPITAL-PENDIENTE-PLAN PIC -9(14)V99.  
+                 15 TX02-CUOTA-PROMEDIO      PIC 9(15)V99.      
+                 15 TX02-PEND-A-LIQUIDAR     PIC 9(15)V99.      
+                 15 TX02-CANT-CUOTAS-PLAN    PIC 99.            
+                 15 TX02-DIAS-FECHA-1        PIC 99.            
+                 15 TX02-DIAS-FECHA-2        PIC 99.            
+                 15 TX02-CANCEL-ANTICIPADA   PIC -9(15)V99.     
+                 15 TX02-CAP-CUOTAS-FACTURADAS PIC 9(15)V99.    
+                 15 TX02-TASA-COSTO-FINANCIERO PIC  9(04)V9999. 
+                 15 TX02-ADERIVARUN-DIA      PIC X.             
+              10 TX02-IDX               PIC  9(02).             
+              10 TX02-CANT-LEIDOS       PIC  9(01).             
+              10 FILLER                 PIC  X(212).            
+      *---------------------------------------------------------                                                                      

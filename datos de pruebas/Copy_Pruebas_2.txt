@@ -1,0 +1,36 @@
+      *****************************************
+      *                                       *
+      * COPY DE PRUEBAS USADO PARA CopyToXML. *
+      *                                       *
+      *****************************************
+
+
+       01  CPYTX01.
+           05 TX01-ERRORES.
+              10 TX01-ERR-TIPO          PIC  X(01).                  
+                88 TX01-TIPO-OK             VALUE '0'.               
+                88 TX01-TIPO-UTIL           VALUE '1'.               
+                88 TX01-TIPO-PGM            VALUE '2'.               
+              10 TX01-ERR-ACCION        PIC  X(01).                  
+                88 TX01-ACCION-OK           VALUE '0'.               
+                88 TX01-ACCION-DEFINIT      VALUE '1'.               
+                88 TX01-ACCION-TEMPOR       VALUE '2'.               
+              10 TX01-ERROR.                                         
+                 15 TX01-CODIGO-ERROR   PIC  X(03).                     
+                 15 TX01-EXPLIC-ERROR   PIC  X(20).                  
+              10 TX01-MODULO-GEN-ERROR  PIC  X(08).   
+{{ENTRADA}}05 TX01-ENTRADA.
+              10 TX01-NRO-DOCUMENTO     PIC  X(10).
+              10 TX01-TIPO-DOCUMENTO    PIC  X(05).
+{{SALIDA}} 05 TX01-SALIDA.
+              10 TX01-NOMBRE            PIC  X(30).
+              10 TX01-APELLIDO          PIC  X(30).
+              10 TX01-DOMICILIO         PIC  X(50).
+              10 TX01-FECHA-NAC         PIC  X(10).
+              10 TX01-CBU               PIC  X(26).
+              10 TX01-NRO-CTA           PIC  X(20).
+              10 TX01-SALDO             PIC  X(15).
+              10 TX01-TELEFONO          PIC  X(15).
+              10 FILLER                 PIC  X(100).
+             
+      *---------------------------------------------------------                                                                                    
