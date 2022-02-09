@@ -10,9 +10,11 @@ import java.util.Properties;
 
 public class Logger {
 
-    private static final String ARCHIVO_LOG        = "CopyToXML.log";
-    private static final String SALTO_LINEA        = "\n";
-    private static final String ARCHIVO_PROPERTIES = "/recursos/Logger.properties";
+    private static final String ARCHIVO_LOG           = "CopyToXML.log";
+    private static final String SALTO_LINEA           = "\n";
+    private static final String ARCHIVO_PROPERTIES    = "/recursos/Strings.properties";
+    // private static final String ARCHIVO_PROPERTIES = "/recursos/Logger.properties";
+
 
     public static void log(String mensaje) {
 

@@ -1,0 +1,1 @@
+* Si se cambia el nombre del copy de la linea 01, al buscar las variables se rompe por el prefijo en obtieneNombreVariable() --- OK.

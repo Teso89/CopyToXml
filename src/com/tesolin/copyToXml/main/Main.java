@@ -2,7 +2,6 @@ package com.tesolin.copyToXml.main;
 
 import com.tesolin.copyToXml.clases.Logger;
 import com.tesolin.copyToXml.clases.Procesador;
-import com.tesolin.copyToXml.clases.Utils;
 import com.tesolin.copyToXml.clases.Validador;
 import java.io.*;
 

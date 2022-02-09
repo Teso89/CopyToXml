@@ -63,6 +63,8 @@ public class Procesador {
 
     public void procesaLinea(String linea) {
 
+
+        // Valida si la linea es un comentario.
         if (!Validador.valida_comentario(linea)) {
 
 
@@ -71,7 +73,7 @@ public class Procesador {
                 this.tx = Utils.obtieneTransaccion(linea);
 
 
-            // Valida si es una variable de grupo, y si lo es si contiene {{ENTRADA}} y {{SALIDA}}.
+            // Valida si es una variable de grupo, y si lo es, valida si contiene {{ENTRADA}} y {{SALIDA}}.
             if (Validador.valida_varGrupo(linea))
                 this.tag = Validador.valida_marca(linea, this.tag);
 
@@ -83,51 +85,39 @@ public class Procesador {
 
                 if (this.tag == 1 || this.tag ==2) {
 
-                if (this.ingresaNombre == true) {
+                    if (this.ingresaNombre == true) {
 
-                    String nombreIngrsado = "";
+                        String nombreIngrsado = "";
 
-                    if (this.aux_nombre == null)
-                        nombreIngrsado = Utils.obtieneNombreVariable(linea, this.tx);
-                    else
-                        nombreIngrsado = this.aux_nombre;
+                        if (this.aux_nombre == null)
+                            nombreIngrsado = Utils.obtieneNombreVariable(linea, this.tx);
+                        else
+                            nombreIngrsado = this.aux_nombre;
 
 
-                    // Obtiene TDD, Nombre, Posición, Longitud y Decimales.
-                    campo = new String[] {
-                            Utils.obtieneTipoDato(linea),
-                            mostrarTexto(nombreIngrsado),
-                            this.posicion + "",
-                            Utils.obtieneLongitudInteger(linea).toString(),
-                            Utils.obtieneDecimales(linea)
-                    };
+                        // Obtiene TDD, Nombre, Posición, Longitud y Decimales.
+                        campo = new String[] {
+                                Utils.obtieneTipoDato(linea),
+                                mostrarTexto(nombreIngrsado),
+                                this.posicion + "",
+                                Utils.obtieneLongitudInteger(linea).toString(),
+                                Utils.obtieneDecimales(linea)
+                        };
 
-                } else {
+                    } else {
 
-                    // Obtiene TDD, Nombre, Posición, Longitud y Decimales.
-                    campo = new String[] {
-                            Utils.obtieneTipoDato(linea),
-                            (this.aux_nombre == null) ? Utils.obtieneNombreVariable(linea, this.tx) : this.aux_nombre,
-                            this.posicion + "",
-                            Utils.obtieneLongitudInteger(linea).toString(),
-                            Utils.obtieneDecimales(linea)
-                    };
+                        // Obtiene TDD, Nombre, Posición, Longitud y Decimales.
+                        campo = new String[] {
+                                Utils.obtieneTipoDato(linea),
+                                (this.aux_nombre == null) ? Utils.obtieneNombreVariable(linea, this.tx) : this.aux_nombre,
+                                this.posicion + "",
+                                Utils.obtieneLongitudInteger(linea).toString(),
+                                Utils.obtieneDecimales(linea)
+                        };
+
+                    }
 
                 }
-
-                }
-
-                // Obtiene TDD, Nombre, Posición, Longitud y Decimales.
-                /*
-                String[] campo = new String[] {
-                        Utils.obtieneTipoDato(linea),
-                        //Utils.obtieneNombreVariable(linea, this.tx),
-                        (this.aux_nombre == null) ? Utils.obtieneNombreVariable(linea, this.tx) : this.aux_nombre,
-                        this.posicion + "",
-                        Utils.obtieneLongitudInteger(linea).toString(),
-                        Utils.obtieneDecimales(linea)
-                };
-                 */
 
                 this.aux_nombre = null;
 

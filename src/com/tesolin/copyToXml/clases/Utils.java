@@ -102,6 +102,14 @@ public class Utils {
         if (pos1 == -1)
             pos1 = texto.indexOf("FILLER");
 
+        if (pos1 == -1) {
+            String aux = texto.substring(3);
+            if (aux.indexOf(" ") != -1)
+                aux = aux.substring(0, aux.indexOf(" "));
+            return aux;
+        }
+
+
         int pos2 = texto.indexOf(' ', pos1);
 
         if (pos2 == -1)
