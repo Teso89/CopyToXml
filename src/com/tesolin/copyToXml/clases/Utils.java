@@ -1,6 +1,8 @@
 package com.tesolin.copyToXml.clases;
 
+import java.io.BufferedReader;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Properties;
 
 public class Utils {
@@ -163,6 +165,23 @@ public class Utils {
             sb.append(" ");
 
         return sb.toString();
+
+    }
+
+    public static String ingresoTeclado() {
+
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+
+            return bufferedReader.readLine();
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+            return "";
+        }
 
     }
 

@@ -13,6 +13,7 @@ public class Procesador {
     private static final Integer POSICION_INICIAL = 32;
     private String aux_nombre;
     private String salida;
+    private boolean ingresaNombre;
 
     public Procesador(String salida) {
         this.request        = new ArrayList<>();
@@ -22,6 +23,14 @@ public class Procesador {
         this.posicion       = POSICION_INICIAL;
         this.aux_nombre     = null;
         this.salida         = salida;
+
+        System.out.print("¿Cambiar los nombres a cada variable? (S / N):  ");
+        String op = Utils.ingresoTeclado();
+
+        if (op.trim().toLowerCase().equals("s"))
+            this.ingresaNombre  = true;
+        else
+            this.ingresaNombre  = false;
     }
 
     public void analizaArchivo(String archivo) {
@@ -70,8 +79,46 @@ public class Procesador {
             // Valida si la liena es una definición de variable.
             if (Validador.valida_pic(linea)) {
 
+                String[] campo = null;
+
+                if (this.tag == 1 || this.tag ==2) {
+
+                if (this.ingresaNombre == true) {
+
+                    String nombreIngrsado = "";
+
+                    if (this.aux_nombre == null)
+                        nombreIngrsado = Utils.obtieneNombreVariable(linea, this.tx);
+                    else
+                        nombreIngrsado = this.aux_nombre;
+
+
+                    // Obtiene TDD, Nombre, Posición, Longitud y Decimales.
+                    campo = new String[] {
+                            Utils.obtieneTipoDato(linea),
+                            mostrarTexto(nombreIngrsado),
+                            this.posicion + "",
+                            Utils.obtieneLongitudInteger(linea).toString(),
+                            Utils.obtieneDecimales(linea)
+                    };
+
+                } else {
+
+                    // Obtiene TDD, Nombre, Posición, Longitud y Decimales.
+                    campo = new String[] {
+                            Utils.obtieneTipoDato(linea),
+                            (this.aux_nombre == null) ? Utils.obtieneNombreVariable(linea, this.tx) : this.aux_nombre,
+                            this.posicion + "",
+                            Utils.obtieneLongitudInteger(linea).toString(),
+                            Utils.obtieneDecimales(linea)
+                    };
+
+                }
+
+                }
 
                 // Obtiene TDD, Nombre, Posición, Longitud y Decimales.
+                /*
                 String[] campo = new String[] {
                         Utils.obtieneTipoDato(linea),
                         //Utils.obtieneNombreVariable(linea, this.tx),
@@ -80,6 +127,7 @@ public class Procesador {
                         Utils.obtieneLongitudInteger(linea).toString(),
                         Utils.obtieneDecimales(linea)
                 };
+                 */
 
                 this.aux_nombre = null;
 
@@ -193,5 +241,19 @@ public class Procesador {
 
 
     }
+
+    private String mostrarTexto(String nombreActual) {
+
+        System.out.print("   *** Nombre nuevo para la variable: '" + nombreActual + "' : ");
+
+        String ingresado = Utils.ingresoTeclado();
+
+        if (ingresado.equals("") || ingresado == null)
+            return nombreActual;
+        else
+            return ingresado;
+
+    }
+
 
 }

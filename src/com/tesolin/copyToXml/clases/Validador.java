@@ -2,10 +2,10 @@ package com.tesolin.copyToXml.clases;
 
 public class Validador {
 
-    private static final String MARCA_ENTRADA = "{{ENTRADA}}";
-    private static final String MARCA_SALIDA  = "{{SALIDA}}";
-    private static final String MARCA_HEADER  = "{{HEADER}}";
-    private static final String MARCA_RESET   = "{{RESET}}";
+    private static final String MARCA_ENTRADA  = "{{ENTRADA}}";
+    private static final String MARCA_SALIDA   = "{{SALIDA}}";
+    private static final String MARCA_HEADER   = "{{HEADER}}";
+    private static final String MARCA_RESET    = "{{RESET}}";
 
     public static boolean valida_01(String fila) {
 
